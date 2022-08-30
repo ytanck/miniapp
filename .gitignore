@@ -1,0 +1,9 @@
+node_modules
+.vscode
+.idea
+src/.tea
+src/config.js
+dist/*
+!dist/package.json
+!dist/package-lock.json
+!dist/mini.project.json
