@@ -1,0 +1,10 @@
+{
+  "defaultTitle": "",
+  "titleBarColor": "#ffffff",
+  "allowsBounceVertical": false,
+  "usingComponents": {
+    "subscribe-msg": "plugin://subscribeMsg/subscribe-msg",
+    "fruit-slots": "/components/fruit-slots/index",
+    "ad-banner": "/components/ad-banner-module/ad-banner-module"
+  }
+}

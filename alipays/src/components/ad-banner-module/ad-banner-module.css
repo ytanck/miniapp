@@ -1,0 +1,13 @@
+.member-banner {
+  width: 720rpx;
+  height: 200rpx;
+  margin: 0.24rem auto;
+  position: relative;
+  z-index: 99;
+  border-radius: 20rpx;
+}
+.member-banner .swiper image {
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+}

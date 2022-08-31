@@ -1,0 +1,24 @@
+<view class="member-banner" style="width:{{width }};height:{{height}}">
+  <!-- 权益 -->
+  <swiper
+    class="swiper"
+    indicator-dots="{{bannerList.length>1?true:false}}"
+    autoplay="{{autoplay}}"
+    vertical="{{vertical}}"
+    interval="{{interval}}"
+    circular="{{circular}}"
+    onChange="onBannerItemChange"
+  >
+    <block a:for="{{bannerList}}">
+      <swiper-item key="swiper-item-{{index}}">
+        <image
+          style="width:{{width }};height:{{height}}"
+          data-index="{{index}}"
+          data-item="{{item}}"
+          onTap="handleClickItem"
+          src="{{item.picUrl}}"
+        ></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

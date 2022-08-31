@@ -1,0 +1,97 @@
+.lt-item-list {
+  margin: 20rpx auto;
+  background: url("https://xiaojinhe-cdn.iyoudui.com/activity/lottert-bg.png")
+    no-repeat center / 100%;
+  width: 702rpx;
+  height: 576rpx;
+  padding: 20rpx;
+  padding-top: 80rpx;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  /* border: 1rpx solid red; */
+}
+.fruit-slots {
+  /* border: 1rpx solid green; */
+  position: relative;
+}
+.title {
+  position: absolute;
+  top: 17rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 700;
+  font-size: 28rpx;
+  line-height: 42rpx;
+  color: #fff;
+}
+
+.lt-item {
+  margin: 16rpx 0 0 16rpx;
+  width: 210rpx;
+  height: 145rpx;
+  padding: 0;
+  float: left;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: left top;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  background-color: #eff1dd;
+  overflow: hidden;
+}
+/* .lt-item:nth-child(1) {
+  background-color: #c3ebfa;
+}
+.lt-item:nth-child(2) {
+  background-color: #eff1dd;
+}
+.lt-item:nth-child(3) {
+  background-color: #f1d6dc;
+}
+.lt-item:nth-child(4) {
+  background-color: #f1d6dc;
+} */
+.lt-item:nth-child(5) {
+  background-color: #2683fc;
+  border: none;
+}
+/* .lt-item:nth-child(6) {
+  background-color: #c3ebfa;
+}
+.lt-item:nth-child(7) {
+  background-color: #eff1dd;
+}
+.lt-item:nth-child(8) {
+  background-color: #c3ebfa;
+}
+.lt-item:nth-child(9) {
+  background-color: #f1d6dc;
+} */
+.lt-item:nth-child(1),
+.lt-item:nth-child(4),
+.lt-item:nth-child(7) {
+  margin-left: 0 !important;
+}
+.lt-item:nth-child(1),
+.lt-item:nth-child(2),
+.lt-item:nth-child(3) {
+  margin-top: 0 !important;
+}
+.lt-active {
+  background-repeat: no-repeat;
+  background-position: left top;
+  box-sizing: border-box;
+  /* filter: contrast(50%); */
+  filter: brightness(50%);
+}
+.lt-button {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(https://zos.alipayobjects.com/rmsportal/CNzFiofsxZsEPuzbORIA.png);
+}
+.lt-button.disabled {
+  background-image: url(https://zos.alipayobjects.com/rmsportal/JbBzEiibIXRGxXPRzJIg.png);
+}
+.lt-button.pause {
+  background-image: url(https://zos.alipayobjects.com/rmsportal/eGLmgGZHTDBjtzwhxNkJ.png);
+}

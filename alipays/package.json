@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "clean": "^4.0.2",
+    "cross-env": "^7.0.3",
+    "gulp": "^4.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-less": "^4.0.1",
+    "gulp-rename": "^1.4.0"
+  },
+  "name": "miniapp-base",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev:dev": "cross-env NODE_ENV=dev gulp dev",
+    "dev:test": "cross-env NODE_ENV=test gulp test",
+    "dev:prod": "cross-env NODE_ENV=prod gulp prod",
+    "build:test": "cross-env NODE_ENV=test gulp build",
+    "build:prod": "cross-env NODE_ENV=prod gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

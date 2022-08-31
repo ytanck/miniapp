@@ -1,0 +1,5 @@
+{
+  "enableHMR": true,
+  "enableAppxNg": true,
+  "enableNodeModuleBabelTransform": true
+}

@@ -1,0 +1,255 @@
+<import-sjs from="../../pages/index/index.sjs" name="{fmtoptType,fmtYMD,setSpanColorArr}"></import-sjs>
+<view class="{{floatMode.prizeType===12?'redRain':'floatView '}}" a:if="{{floatMode.prizeType}}">
+    <!-- <view class="redRain" >     -->
+    <!-- type==MERCHANT_COUPON 普通商品中奖-->
+    <view class="type1" a:if='{{floatMode.prizeType=="MERCHANT_COUPON"||floatMode.prizeType=="PHONE_COUPON"}}'
+        style="background-image: url('{{floatMode.bgImg}}')">
+        <image class="close" onTap="cancel" src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/close.png">
+        </image>
+        <image class="goodsImg" src="{{floatMode.prizeImageUrl}}"></image>
+        <view class="title" style="{{floatMode.fontColor}}">{{floatMode.prizeName}}</view>
+        <view class="msg" style="{{floatMode.fontColor}}">{{floatMode.prizeDesc}}</view>
+        <view class="confirm" onTap="confirm" style="background-image: url('{{floatMode.confirmImg}}')">
+            <!-- 去领取 -->
+            {{floatMode.prizeType=="MERCHANT_COUPON"?"立即查看":'立即使用'}}
+        </view>
+    </view>
+    <!-- type==PHONE_RED_PACKET 话费券商品中奖 type==IN_KIND 实物商品中间-->
+    <view class="type2" a:if='{{floatMode.prizeType=="PHONE_RED_PACKET"||floatMode.prizeType=="IN_KIND"}}'
+        style="background-image: url('{{floatMode.bgImg}}')">
+        <image class="close" onTap="cancel" src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/close.png">
+        </image>
+        <image class="goodsImg" src="{{floatMode.prizeImageUrl}}"></image>
+        <view class="title" style="{{floatMode.fontColor}}">{{floatMode.prizeName}}</view>
+        <view class="msg" style="{{floatMode.fontColor}}">{{floatMode.prizeDesc}}</view>
+        <view class="confirm" a:if='{{floatMode.prizeType=="PHONE_RED_PACKET"}}' onTap="confirm"
+            style="background-image: url('{{floatMode.confirmImg}}')">
+            立即领取
+        </view>
+        <view class="confirm" a:if='{{floatMode.prizeType=="IN_KIND"}}' onTap="confirm"
+            style="background-image: url('{{floatMode.confirmImg}}')">
+            立即领取
+        </view>
+    </view>
+    <!-- type==4 话费券领取-->
+    <view a:if="{{floatMode.prizeType==4}}" class="type4">
+        <image class="close" onTap="cancel" src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/close2.png">
+        </image>
+        <view class="title">请填写您的手机号</view>
+        <view class="msg">奖品将于15个工作日内为您发放</view>
+        <input type="number" maxlength="11" placeholder="请填写您的手机号" onInput="phoneMode" />
+        <view class="confirm" onTap="confirm"> 提交 </view>
+    </view>
+    <!-- type==5 实物大奖领取-->
+    <view a:if="{{floatMode.prizeType==5}}" class="type5">
+        <image class="close" onTap="cancel" src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/close2.png">
+        </image>
+        <view class="title">请填写收货地址</view>
+        <view class="msg">奖品将于15个工作日内为您发放</view>
+        <view class="msg"></view>
+        <view class="input">
+            <input type="text" enableNative="{{false}}" name="" maxlength="15" placeholder="请填写收货人姓名"
+                onInput="nameMode" />
+        </view>
+        <view class="input">
+            <input type="number" maxlength="11" name="" placeholder="请填写收货人手机号" onInput="phoneMode" />
+        </view>
+
+        <view class="input">
+            <input type="text" name="" placeholder="请填写收货人身份证号码" onInput="idCardMode" />
+        </view>
+
+        <view class="textarea">
+            <textarea rows="3" enableNative="{{false}}" cols="20" maxlength="30" onInput="addressMode"
+                placeholder="请填写收货人地址">
+            </textarea>
+        </view>
+        <view class="confirm" onTap="confirm"> 提交 </view>
+    </view>
+
+    <!-- type==6 异常弹窗-->
+    <view a:if="{{floatMode.prizeType==6}}" class="type6" style="background-image: url('{{floatMode.bgImg}}')">
+        <image class="close" onTap="cancel" src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/close2.png">
+        </image>
+        <view class="title" style="{{floatMode.fontColor}}">{{ floatMode.message }}</view>
+        <view class="confirm" onTap="cancel" style="background-image: url('{{floatMode.confirmImg}}')">
+            确定
+        </view>
+    </view>
+
+    <!-- type==7  双按钮弹窗-->
+    <view class="redemotionConfirm" a:if="{{floatMode.prizeType==7}}">
+        <view class="contentBg" style="background-image: url('{{floatMode.bgImg}}')">
+            <image class="closeConfirm" onTap="cancel"
+                src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/close2.png"></image>
+            <view class="msg">
+                <text a:if="{{setSpanColorArr(floatMode.message)}}" style="{{floatMode.fontColor}}">
+                    {{setSpanColorArr(floatMode.message)[0]?setSpanColorArr(floatMode.message)[0]:''}}
+                    <text a:if="{{setSpanColorArr(floatMode.message)[1]}}"
+                        style="{{config.themeColor}}">{{setSpanColorArr(floatMode.message)[1]}}</text>
+                    {{setSpanColorArr(floatMode.message)[2]?setSpanColorArr(floatMode.message)[2]:''}}
+                </text>
+            </view>
+            <view class="twoBtn">
+                <view class="cancelBtn" onTap="cancel">取消</view>
+                <view class="okBtn" onTap="confirm">确认</view>
+            </view>
+        </view>
+    </view>
+
+    <!-- type==8 按钮可跳转弹窗-->
+    <view class="type8" a:if="{{floatMode.prizeType==8}}" style="background-image: url('{{floatMode.bgImg}}')">
+        <image class="close" onTap="cancel" src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/close2.png">
+        </image>
+        <view class="wxts">温馨提示</view>
+        <view class="title" style="{{floatMode.fontColor}}">
+            <text a:if="{{setSpanColorArr(floatMode.message)}}" style="{{floatMode.fontColor}}">
+                {{setSpanColorArr(floatMode.message)[0]?setSpanColorArr(floatMode.message)[0]:''}}
+                <text a:if="{{setSpanColorArr(floatMode.message)[1]}}"
+                    style="{{config.themeColor}}">{{setSpanColorArr(floatMode.message)[1]}}</text>
+                {{setSpanColorArr(floatMode.message)[2]?setSpanColorArr(floatMode.message)[2]:''}}
+            </text>
+        </view>
+        <view class="confirm" onTap="confirm" style="background-image: url('{{floatMode.confirmImg}}')">
+            逛一逛
+        </view>
+    </view>
+
+    <!-- 活动未开始 -->
+    <view class="type9" a:if="{{floatMode.prizeType==9}}" style="background-image: url('{{floatMode.bgImg}}')">
+        <image class="close" onTap="cancel" src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/close2.png">
+        </image>
+        <view class="confirm" onTap="cancel" style="background-image: url('{{floatMode.confirmImg}}')">
+            确定
+        </view>
+    </view>
+
+    <!-- 未充值提醒弹窗 -->
+    <view class="type10" a:if="{{floatMode.prizeType==10}}">
+        <image a:if="{{!floatMode.isRunConfirm}}" class="close" onTap="cancel"
+            src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/close2.png"></image>
+        <view class="title">{{ floatMode.title }}</view>
+        <view class="content">{{ floatMode.message }}</view>
+        <image class="close" onTap="cancel" src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/close2.png">
+        </image>
+        <view class="confirm {{floatMode.isRunConfirm?'scale':''}}"
+            onTap="{{floatMode.isRunConfirm?'confirm':'cancel'}}">
+            {{ floatMode.confirmBtn || '确定'}}
+        </view>
+    </view>
+
+    <!-- 未充值提醒弹窗 -->
+    <view class="type100" a:if="{{floatMode.prizeType==100}}"
+        style="background-image: url('{{config.leftIcon.iconUrl}}')"
+        onTap="{{floatMode.isRunConfirm?'confirm':'cancel'}}">
+        <image a:if="{{!floatMode.isRunConfirm}}" class="close" onTap="cancel"
+            src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/close2.png"></image>
+        <view class="title"></view>
+        <view class="content"></view>
+        <image class="close" onTap="cancel" src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/close2.png">
+        </image>
+        <view class="confirm {{floatMode.isRunConfirm?'scale':''}}">
+        </view>
+    </view>
+
+    <!-- 强提醒弹窗 -->
+    <!-- <view class='type11'  > -->
+    <view class="type11" a:if="{{floatMode.prizeType==11 && config.bottom.showTimeType==1}}" onTap="confirm">
+        <!--        <image  class='close' onTap='cancel' src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/close2.png"></image>-->
+        <!-- <image class='content-img' onTap='confirm' src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/gift/bag-tips.png"></image> -->
+        <!-- <block a:for="{{redPackageList}}">
+            <image src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/gift/redPackage.png" class="content-img content-img{{item.id}}" onTap="confirm"></image>
+        </block> -->
+        <view class="content">
+            <!-- <view class='bg'></view> -->
+            <view class="gift"></view>
+            <!-- <view class='hand'></view> -->
+        </view>
+    </view>
+
+    <!-- 抽奖结果弹窗 -->
+    <view class="type12" a:if="{{floatMode.prizeType==12}}">
+        <!--  <view a:if="{{floatMode.userPrizeObj.prizeType === 'PHONE_COUPON'}}" class="countdown">距失效 <text class="s">{{hour}}</text>:<text class="f">{{minute}}</text>:<text class="m">{{second}}</text></view> -->
+        <image class="close" onTap="cancel" src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/close2.png">
+        </image>
+        <view class="title">
+            <image src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/gift/zhongjiang_title.png"></image>
+        </view>
+        <view class="content" a:if="{{!floatMode.isTuiA}}">
+            <view class="price">{{ floatMode.userPrizeObj.prizeExt}}</view>
+            <image src="{{floatMode.userPrizeObj.prizeImageUrl}}"></image>
+            <view class="nameAndDesc">
+                <view class="name">{{ floatMode.userPrizeObj.prizeName}}</view>
+                <view class="desc">{{floatMode.userPrizeObj.prizeDesc}}</view>
+            </view>
+        </view>
+        <image class="content_tuiA" mode="aspectFit" a:if="{{floatMode.isTuiA}}"
+            src="{{floatMode.userPrizeObj.advertInfo.bannerPngUrl}}" onLoad="imageLoad"></image>
+        <view class="confirm scale" onTap="confirm">
+            {{ floatMode.confirmBtn || '立即使用'}}
+        </view>
+        <view class="dialog_banner">
+            <!-- <index-banner-module
+                bannerList="{{bannerList}}"
+                config="{{config}}"
+                pageName="dialogBanner"
+            >
+            </index-banner-module> -->
+            <ad-banner-module bannerList="{{bannerList}}" type="{{bannerType}}"></ad-banner-module>
+        </view>
+    </view>
+
+    <!-- 关闭第三次中奖后的挽留弹窗 -->
+    <view class="type13" a:if="{{floatMode.prizeType==13}}">
+
+        <view class="title"></view>
+        <view class="content">每周<view class="red">{{floatMode.defaultDrawTime||6}}次</view>抽奖机会，本周机会已用完，<view
+                class="red">下周一记得再来哦</view>
+        </view>
+        <view class="btns">
+            <view class="cancel" onTap="cancel" data-type="btn"></view>
+            <view class="scale confirm" onTap="confirm" style="background-image: url('{{WanLiuConfig[0].picUrl}}')">
+            </view>
+        </view>
+        <image class="close" onTap="cancel" src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/close2.png">
+        </image>
+
+    </view>
+
+    <!-- 星火 首屏弹窗 -->
+    <view class="type14" a:if="{{floatMode.prizeType==14}}">
+        <!--        <image  class='close' onTap='cancel' src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/close2.png"></image>-->
+        <!-- <image class='content-img' onTap='confirm' src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/gift/bag-tips.png"></image> -->
+        <!-- <block a:for="{{redPackageList}}">
+            <image src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/gift/redPackage.png" class="content-img content-img{{item.id}}" onTap="confirm"></image>
+        </block> -->
+        <view class="content">
+            <!-- <view class='bg'></view> -->
+            <view class="gift" style="background-image: url('{{QiangTiXingConfig[0].picUrl}}')" onTap="confirm"></view>
+            <!-- <view class='hand'></view> -->
+            <image class="close" onTap="cancel"
+                src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/close2.png"></image>
+        </view>
+    </view>
+
+
+    <!-- 分享弹窗 -->
+    <view class="type15" a:if="{{floatMode.prizeType==15}}">
+        <view class="content">
+            <view class="title">{{floatMode.title}}</view>
+            <view class="userList" a:for="{{[1]}}">
+                <view class="no-user" a:if="{{floatMode.btnType===0}}">+</view>
+                <view class="user" a:else>
+                    <image src="{{baseUrl+'avatar.webp'}}"></image>
+                </view>
+            </view>
+            <button a:if="{{floatMode.btnType===0}}" class="btn" open-type="share"
+                a:if="{{canIUseShareButton}}">{{floatMode.btnText}}</button>
+            <view a:else class="btn {{floatMode.btnType===1?'color':'gray'}}" onTap="confirm">{{floatMode.btnText}}
+            </view>
+            <image class="close" onTap="cancel"
+                src="https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/close2.png"></image>
+        </view>
+    </view>
+
+</view>

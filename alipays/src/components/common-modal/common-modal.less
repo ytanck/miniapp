@@ -1,0 +1,1261 @@
+@baseUrl: "https://xiaojinhe-cdn.iyoudui.com/mouthGiftMiniApp/SCREQ-130/";
+
+.floatView {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    /* 子元素横向排列 */
+    justify-content: center;
+    /* 相对父元素水平居中 */
+    align-items: center;
+    /*  子元素相对父元素垂直居中 */
+}
+
+.close {
+    width: 0.38rem;
+    height: 0.38rem;
+    position: absolute;
+    right: 0;
+    top: -0.79rem;
+    opacity: 0;
+    animation: to-show 0.3s ease-in 1s 1 forwards;
+}
+
+.type1 {
+    // background: #fff;
+    width: 6.6rem;
+    height: 5.6rem;
+    background-size: 6.6rem 5.6rem;
+    background-repeat: no-repeat;
+    background-origin: content;
+    position: relative;
+
+    .goodsImg {
+        width: 1.8rem;
+        height: 1.8rem;
+        display: block;
+        border-radius: 0.1rem;
+        position: absolute;
+        top: 1.77rem;
+        left: 0.42rem;
+    }
+
+    .title {
+        font-size: 0.48rem;
+        // font-family: PingFang SC;
+        font-weight: 500;
+        color: #333;
+        width: 4.1rem;
+        position: absolute;
+        top: 2.17rem;
+        left: 2.49rem;
+        line-height: 0.5rem;
+        text-align: left;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .msg {
+        font-size: 0.38rem;
+        // font-family: PingFang SC;
+        font-weight: 300;
+        color: #999;
+        line-height: 0.43rem;
+        width: 4.1rem;
+        position: absolute;
+        top: 2.85rem;
+        left: 2.49rem;
+        text-align: left;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .confirm {
+        position: absolute;
+        width: 434rpx;
+        height: 123rpx;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        left: 83rpx;
+        bottom: 37rpx;
+        font-size: 0.36rem;
+        line-height: 0.95rem;
+        text-align: center;
+        font-weight: 400;
+        color: #C40026;
+    }
+}
+
+.type2 {
+    width: 6rem;
+    height: 7.6rem;
+    background-size: 6rem 7.6rem;
+    background-repeat: no-repeat;
+    background-origin: content;
+    position: relative;
+
+    .goodsImg {
+        width: 1.8rem;
+        height: 1.8rem;
+        display: block;
+        border-radius: 0.1rem;
+        position: absolute;
+        top: 1.9rem;
+        left: 2.1rem;
+    }
+
+    .title {
+        font-size: 0.48rem;
+        line-height: 0.5rem;
+        height: 0.55rem;
+        // background: #fff;
+        // font-family: PingFang SC;
+        font-weight: 600;
+        color: #333333;
+        width: 4rem;
+        // background: gray;
+        position: absolute;
+        top: 4.21rem;
+        left: 1.09rem;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .msg {
+        font-size: 0.38rem;
+        // font-family: PingFang SC;
+        font-weight: 300;
+        color: #999999;
+        line-height: 0.4rem;
+        width: 4rem;
+        // background: gray;
+        position: absolute;
+        top: 4.89rem;
+        left: 1.09rem;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .confirm {
+        position: absolute;
+        width: 2.8rem;
+        height: 0.95rem;
+        background-size: 2.8rem 0.95rem;
+        background-repeat: no-repeat;
+        left: 1.6rem;
+        bottom: 0.88rem;
+        font-size: 0.36rem;
+        line-height: 0.95rem;
+        text-align: center;
+        // font-family: PingFang SC;
+        font-weight: 600;
+        color: #C40026;
+    }
+}
+
+.type4 {
+    background-size: 6rem 4.84rem;
+    background-repeat: no-repeat;
+    background-origin: content;
+    position: relative;
+    width: 560rpx;
+    height: 460rpx;
+    background: linear-gradient(180deg, #EB4E47 0%, #D97AA8 100%);
+    border-radius: 20rpx;
+    margin-top: 100rpx;
+
+    .title {
+        margin-top: 0.56rem;
+        padding-left: .4rem;
+        font-size: 36rpx;
+        font-weight: 500;
+        color: #FFFFFF;
+    }
+
+    .msg {
+        margin-top: .24rem;
+        font-size: 24rpx;
+        font-weight: 400;
+        color: #FFFFFF;
+        padding-left: .4rem;
+    }
+
+    .confirm {
+        margin: 0 auto;
+        width: 320rpx;
+        height: 102rpx;
+        line-height: 102rpx;
+        background: linear-gradient(90deg, #FFF9E6 0%, #FFD967 100%);
+        border-radius: 51rpx;
+
+        font-size: 36rpx;
+        font-weight: 400;
+        color: #E9524F;
+    }
+
+    input {
+        width: 4.8rem;
+        height: 0.84rem;
+        background: #F4F4F4;
+        border-radius: 0.1rem;
+        outline: none;
+        font-size: 0.3rem;
+        border: none;
+        display: block;
+        padding-left: 0.3rem;
+        margin: 0.32rem auto 0;
+        border: 0.02rem solid #EDEDED;
+        -webkit-appearance: none
+    }
+
+    .confirm {
+        position: absolute;
+        width: 2.8rem;
+        height: 0.9rem;
+        background-size: 2.8rem 0.9rem;
+        left: 1.6rem;
+        bottom: 0.4rem;
+        font-size: 0.36rem;
+        line-height: 0.95rem;
+        text-align: center;
+        background: linear-gradient(90deg, #FFF9E6 0%, #FFD967 100%);
+        font-weight: 400;
+        color: #E9524F;
+    }
+}
+
+.type5 {
+    width: 5.6rem;
+    height: 7.5rem;
+    background: linear-gradient(180deg, #EB4E47 0%, #D97AA8 100%);
+    border-radius: 20rpx;
+    position: relative;
+    margin-top: 100rpx;
+
+    .title {
+        margin-top: 0.56rem;
+        padding-left: .4rem;
+        font-size: 36rpx;
+        font-weight: 500;
+        color: #FFFFFF;
+    }
+
+    .msg {
+        margin-top: .24rem;
+        font-size: 24rpx;
+        font-weight: 400;
+        color: #FFFFFF;
+        padding-left: .4rem;
+    }
+
+    .input {
+        width: 4.8rem;
+        height: 0.78rem;
+        margin: 0.2rem auto 0;
+        border-radius: 0.1rem;
+        background: #fff;
+        position: relative;
+
+        // border: 0.01rem solid rgba(0, 0, 0, 1);
+        input {
+            box-sizing: border-box;
+            vertical-align: middle;
+            font-size: 0.28rem;
+            background: #F4F4F4;
+            border-radius: 0.1rem;
+            outline: none;
+            border: none;
+            display: block;
+            height: 0.78rem;
+            padding-left: 0.32rem;
+            width: 4.8rem;
+            border: 1px solid #EDEDED;
+            resize: none;
+
+        }
+    }
+
+    .textarea {
+        width: 4.8rem;
+        height: 1.2rem;
+        margin: 0.27rem auto 0;
+        border-radius: 0.1rem;
+        background: #fff;
+        position: relative;
+        // border: 1px solid rgba(0, 0, 0, 1);
+
+        textarea {
+            -webkit-appearance: none;
+            box-sizing: border-box;
+            vertical-align: middle;
+            width: 4.8rem;
+            height: 1.2rem;
+            outline: none;
+            border: none;
+            font-size: 0.28rem;
+            display: block;
+            position: absolute;
+            top: 0rem;
+            left: 0rem;
+            border-radius: .1rem;
+            padding-top: .3rem;
+            padding-left: .3rem;
+            background: #F4F4F4;
+            border: 1px solid #EDEDED;
+        }
+    }
+
+    .confirm {
+        position: absolute;
+        width: 2.8rem;
+        height: 0.9rem;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0.3rem;
+        font-size: 0.36rem;
+        line-height: 0.9rem;
+        text-align: center;
+        font-weight: 400;
+        background: linear-gradient(90deg, #FFF9E6 0%, #FFD967 100%);
+        color: #E9524F;
+        border-radius: 51rpx;
+    }
+}
+
+.type6 {
+    width: 6rem;
+    height: 4.84rem;
+    background-size: 6rem 4.84rem;
+    background-repeat: no-repeat;
+    background-origin: content;
+    position: relative;
+
+    .title {
+        margin-top: 1.4rem;
+        padding: 0 0.3rem;
+        font-size: 0.42rem;
+        // font-family: PingFang SC;
+        font-weight: 500;
+        line-height: 0.5rem;
+        color: #333333;
+        text-align: center;
+    }
+
+    .confirm {
+        position: absolute;
+        width: 2.8rem;
+        height: 0.9rem;
+        background-size: 2.8rem 0.9rem;
+        background-repeat: no-repeat;
+        left: 1.6rem;
+        bottom: 0.7rem;
+        font-size: 0.36rem;
+        line-height: 0.95rem;
+        text-align: center;
+        // font-family: PingFang SC;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 1);
+    }
+}
+
+.type9 {
+    width: 6rem;
+    height: 4.84rem;
+    background-size: 6rem 4.84rem;
+    background-repeat: no-repeat;
+    background-origin: content;
+    position: relative;
+
+    .confirm {
+        position: absolute;
+        width: 2.8rem;
+        height: 0.9rem;
+        background-size: 2.8rem 0.9rem;
+        background-repeat: no-repeat;
+        left: 1.6rem;
+        bottom: 0.56rem;
+        font-size: 0.36rem;
+        line-height: 0.95rem;
+        text-align: center;
+        // font-family: PingFang SC;
+        color: rgba(255, 255, 255, 1);
+        font-weight: bold;
+    }
+}
+
+.redemotionConfirm {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    /* 子元素横向排列 */
+    justify-content: center;
+    /* 相对父元素水平居中 */
+    align-items: center;
+
+    /*  子元素相对父元素垂直居中 */
+    .contentBg {
+        width: 6rem;
+        height: 4.84rem;
+        border-radius: 0.1rem;
+        position: relative;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+
+        .closeConfirm {
+            width: 0.58rem;
+            height: 0.58rem;
+            position: absolute;
+            right: 0;
+            top: -50px;
+        }
+
+        .msg {
+            width: 5rem;
+            margin: 1.7rem auto 0.87rem;
+            font-size: 0.36rem;
+            // color: #333333;
+        }
+
+        .twoBtn {
+            position: absolute;
+            bottom: 0.56rem;
+            left: 0.4rem;
+            right: 0.4rem;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+
+            .cancelBtn {
+                width: 2.4rem;
+                height: 0.9rem;
+                text-align: center;
+                line-height: 0.9rem;
+                background: #bebebe;
+                border-radius: 0.45rem;
+                font-size: 0.34rem;
+                color: #fff;
+            }
+
+            .okBtn {
+                width: 2.4rem;
+                height: 0.9rem;
+                text-align: center;
+                line-height: 0.9rem;
+                background: linear-gradient(-45deg,
+                        rgba(247, 48, 73, 1) 0%,
+                        rgba(247, 118, 48, 1) 99%);
+                border-radius: 0.45rem;
+                font-size: 0.34rem;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.type8 {
+    width: 6rem;
+    height: 4.84rem;
+    background-size: 6rem 4.84rem;
+    background-repeat: no-repeat;
+    background-origin: content;
+    position: relative;
+
+    .wxts {
+        font-size: .42rem;
+        color: #333;
+        text-align: center;
+        margin-top: .4rem;
+        font-weight: 600;
+    }
+
+    .title {
+        margin-top: .46rem;
+        padding: 0 0.4rem;
+        font-size: 0.4rem;
+        // font-family: PingFang SC;
+        font-weight: 500;
+        line-height: 0.5rem;
+        color: #333;
+        text-align: center;
+    }
+
+    .confirm {
+        position: absolute;
+        width: 2.8rem;
+        height: 0.9rem;
+        background-size: 2.8rem 0.9rem;
+        background-repeat: no-repeat;
+        left: 1.6rem;
+        bottom: 0.56rem;
+        font-size: 0.36rem;
+        line-height: 0.95rem;
+        text-align: center;
+        // font-family: PingFang SC;
+        color: rgba(255, 255, 255, 1);
+        font-weight: bold;
+    }
+}
+
+.type10 {
+    position: relative;
+    width: 600rpx;
+    height: 508rpx;
+    //border-radius: 20rpx;
+    text-align: center;
+    padding-top: 1.3rem;
+    background-image: url("https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/gift/dialog-bg.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-top: 239rpx;
+
+    .title {
+        font-size: 48rpx;
+        font-weight: 500;
+        color: #616161;
+        margin-bottom: .3rem;
+    }
+
+    .content {
+        font-size: 38rpx;
+        font-weight: 500;
+        color: #AAAAAA;
+        margin-bottom: .54rem;
+    }
+
+    .confirm {
+        margin: 0 auto;
+        width: 320rpx;
+        height: 102rpx;
+        line-height: 102rpx;
+        background: linear-gradient(90deg, #FFF9E6 0%, #FFD967 100%);
+        border-radius: 51rpx;
+        font-weight: bold;
+        font-size: 36rpx;
+        color: #E9524F;
+        position: absolute;
+        left: 140rpx;
+        bottom: 36rpx;
+    }
+
+    .scale {
+        animation: btn-scale .15s linear infinite alternate;
+    }
+
+
+}
+
+.type100 {
+    position: relative;
+    width: 600rpx;
+    height: 542rpx;
+    //border-radius: 20rpx;
+    // text-align: center;
+    // padding-top: 1.3rem;
+    // background-image: url("https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/gift/dialog-bg.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-top: 239rpx;
+
+    // .confirm{
+    //     width: 308rpx;
+    //     height: 91rpx;
+    //     background-image: url("https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/img119/confirn-btn.png");
+    //     background-size: 100%;
+    //     background-repeat: no-repeat;
+    //     left: 1.5rem;
+    // }
+    .confirm {
+        margin: 0 auto;
+        width: 434rpx;
+        height: 123rpx;
+        // line-height: 102rpx;
+        // background: linear-gradient(90deg, #FFF9E6 0%, #FFD967 100%);
+        // border-radius: 51rpx;
+        font-weight: bold;
+        // font-size: 36rpx;
+        // color: #E9524F;
+        position: absolute;
+        left: 50%;
+        bottom: 36rpx;
+        margin-left: -217rpx;
+        background: url('@{baseUrl}btn100.png') no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .scale {
+        animation: btn-scale .15s linear infinite alternate;
+    }
+}
+
+.redRain {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    /* 子元素横向排列 */
+    justify-content: center;
+    /* 相对父元素水平居中 */
+    align-items: center;
+    /*  子元素相对父元素垂直居中 */
+}
+
+.type11 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    /* 子元素横向排列 */
+    justify-content: center;
+    /* 相对父元素水平居中 */
+    align-items: center;
+
+    /*  子元素相对父元素垂直居中 */
+    .content {
+        width: 530rpx;
+        height: 647rpx;
+        position: relative;
+        margin-top: 100rpx;
+
+        .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 737rpx;
+            height: 643rpx;
+            background: url('https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/images413/bg419.webp') no-repeat;
+            background-size: 737rpx 643rpx;
+        }
+
+        .gift {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 530rpx;
+            height: 647rpx;
+            background: url('https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/images413/gift419.webp') no-repeat;
+            // background-size: 504rpx 659rpx;
+            background-size: 100%;
+            animation: animation1 0.5s linear infinite;
+        }
+
+        .hand {
+            top: 535rpx;
+            position: absolute;
+            left: 239rpx;
+            width: 148rpx;
+            height: 151rpx;
+            background: url('https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/images413/hand.webp') no-repeat;
+            background-size: 148rpx 151rpx;
+            animation: animation2 0.8s linear infinite;
+            transform: scale(0.6);
+        }
+
+        @keyframes animation1 {
+            0% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1) rotate(-10deg);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            75% {
+                transform: scale(1) rotate(10deg);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes animation2 {
+            0% {
+                transform: scale(0.6);
+                top: 535rpx;
+                left: 239rpx;
+
+            }
+
+            50% {
+                transform: scale(1);
+                top: 610rpx;
+                left: 289rpx;
+            }
+
+            100% {
+                transform: scale(0.6);
+                top: 535rpx;
+                left: 239rpx;
+            }
+        }
+
+    }
+
+}
+
+// .type11{
+//     position: relative;
+//     .content-img{
+//         width: 141rpx;
+//         height: 242rpx;
+//         position: absolute;
+
+//     }
+//     .content-img1{
+//         top: 1048rpx;
+//         left: 183rpx;
+//         animation: dropdown1 .5s linear infinite;
+//     }
+//     .content-img2{
+//         top: 904rpx;
+//         left: 23rpx;
+//         animation: dropdown2 1s linear infinite;
+//     }
+//     .content-img3{
+//         top: 798rpx;
+//         left: 562rpx;
+//         animation: dropdown3 1.2s linear infinite;
+//     }
+//     .content-img4{
+//         top: 731rpx;
+//         left: 304rpx;
+//         animation: dropdown4 1.4s linear infinite;
+//     }
+//     .content-img5{
+//         top: 402rpx;
+//         left: 95rpx;
+//         animation: dropdown5 1.6s linear infinite;
+//     }
+//     .content-img6{
+//         top: 256rpx;
+//         left: 351rpx;
+//         animation: dropdown6 1.8s linear infinite;
+//     }
+//     .content-img7{
+//         top: 149rpx;
+//         left: 574rpx;
+//         animation: dropdown7 2s linear infinite;
+//     }
+//     .content-img8{
+//         top: 0rpx;
+//         left: 0rpx;
+//         animation: dropdown8 2.2s linear infinite;
+//     }
+//     @keyframes dropdown1 {
+//         from{
+//             top: 1048rpx;
+//         }
+//         to{
+//             top: 1248rpx;
+//         }
+//       }
+//       @keyframes dropdown2 {
+//         from{
+//             top: 904rpx;
+//         }
+//         to{
+//             top: 1248rpx;
+//         }
+//       }
+//       @keyframes dropdown3 {
+//         from{
+//             top: 798rpx;
+//         }
+//         to{
+//             top: 1248rpx;
+//         }
+//       }
+//       @keyframes dropdown4 {
+//         from{
+//             top: 731rpx;
+//         }
+//         to{
+//             top: 1248rpx;
+//         }
+//       }
+//       @keyframes dropdown5 {
+//         from{
+//             top: 402rpx;
+//         }
+//         to{
+//             top: 1248rpx;
+//         }
+//       }
+//       @keyframes dropdown6 {
+//         from{
+//             top: 256rpx;
+//         }
+//         to{
+//             top: 1248rpx;
+//         }
+//       }
+//       @keyframes dropdown7 {
+//         from{
+//             top: 149rpx;
+//         }
+//         to{
+//             top: 1248rpx;
+//         }
+//       }
+//       @keyframes dropdown8 {
+//         from{
+//             top: 0rpx;
+//         }
+//         to{
+//             top: 1248rpx;
+//         }
+//       }
+
+// }
+
+
+.type12 {
+    position: relative;
+    width: 600rpx;
+    height: 748rpx;
+    //background: linear-gradient(180deg, #EB4E47 0%, #D97AA8 100%);
+    //border-radius: 20rpx;
+    text-align: center;
+    padding-top: .36rem;
+    background-image: url("https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/gift/zhongjinag-bg.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-top: 400rpx;
+
+    .title {
+        // margin-bottom: .5rem;
+        // font-size: 36rpx;
+        // font-weight: 500;
+        // color: #926052;
+        width: 362rpx;
+        height: 42rpx;
+        margin: 0 auto;
+
+        image {
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+
+    .countdown {
+        position: absolute;
+        left: 135rpx;
+        top: -85rpx;
+        width: 322rpx;
+        height: 68rpx;
+        line-height: 68rpx;
+        background: #DF4F4F;
+        border-radius: 34rpx;
+        font-size: 30rpx;
+        font-weight: 400;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        /* 相对父元素水平居中 */
+        align-items: center;
+
+        /*  子元素相对父元素垂直居中 */
+        text {
+            display: inline-block;
+            width: 40rpx;
+            height: 50rpx;
+            line-height: 50rpx;
+            background: #FFFFFF;
+            border-radius: 4rpx;
+            font-size: 30rpx;
+            font-weight: 400;
+            color: #DF4F4F;
+            margin: 0 6rpx;
+            padding: 0 4rpx;
+
+        }
+    }
+
+    .content {
+        width: 516rpx;
+        height: 177rpx;
+        background-image: url("https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/gift/zhongjiang_coupon_bg.png");
+        background-size: 100%;
+        margin: 0.46rem auto 0;
+        display: flex;
+        align-items: center;
+        padding-left: 22rpx;
+
+        .price {
+            width: 130rpx;
+            height: 60rpx;
+            font-size: 60rpx;
+            color: #ED2323;
+            font-weight: bold;
+            margin-right: 28rpx;
+        }
+
+        image {
+            width: 100rpx;
+            height: 100rpx;
+            border-radius: 10rpx;
+            background-color: #F9E6C7;
+            margin-right: 11rpx;
+        }
+
+        .nameAndDesc {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .name {
+            width: 189rpx;
+            font-weight: 400;
+            // margin-top: .3rem;
+            margin-bottom: .3rem;
+            font-size: 28rpx;
+            color: #DF4F4F;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .desc {
+            width: 189rpx;
+            font-size: 24rpx;
+            font-weight: 400;
+            color: #4B4B4B;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
+    .content_tuiA {
+        width: 4.8rem;
+        height: 2.25rem;
+        margin: 0.25rem auto 0;
+        display: flex;
+        align-items: center;
+        // image{
+        //     width: 100%;
+        //     height: 100%;
+        // }
+    }
+
+    .confirm {
+        margin: .4rem auto 0;
+        width: 320rpx;
+        height: 102rpx;
+        line-height: 102rpx;
+        background: linear-gradient(90deg, #FFF9E6 0%, #FFD967 100%);
+        border-radius: 51rpx;
+
+        font-size: 36rpx;
+        font-weight: bold;
+        color: #E9524F;
+        position: absolute;
+        left: 140rpx;
+        bottom: 240rpx;
+    }
+
+    .scale {
+        animation: btn-scale .15s linear infinite alternate;
+    }
+
+    .dialog_banner {
+        width: 600rpx;
+        height: 1.5rem;
+        // background: #fff;
+        position: absolute;
+        bottom: 55rpx;
+
+        .member-banner {
+            width: 600rpx !important;
+            height: 150rpx !important;
+            margin: 0 auto !important;
+
+            swiper {
+                image {
+                    width: 600rpx !important;
+                    height: 150rpx !important;
+                }
+            }
+        }
+
+    }
+
+    .banner-box {
+        margin-top: 0 !important;
+    }
+}
+
+.type13 {
+    position: relative;
+    width: 600rpx;
+    height: 542rpx;
+    text-align: center;
+    padding-top: 36rpx;
+    background-image: url("https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/gift/zhongjinag-bg.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-top: 239rpx;
+    position: relative;
+
+    .title {
+        width: 362rpx;
+        height: 48rpx;
+        font-size: 48rpx;
+        background: url("https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/gift/title-wl.png") no-repeat center;
+        background-size: contain;
+        margin: 0 auto;
+    }
+
+    .content {
+        width: 487rpx;
+        font-size: 38rpx;
+        font-weight: 500;
+        color: #595959;
+        margin: 84rpx auto 0;
+        line-height: 56rpx;
+
+        .red {
+            display: inline;
+            color: #EF2A2A;
+        }
+    }
+
+    .btns {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 48rpx;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 37rpx;
+
+        .scale {
+            animation: btn-scale .15s linear infinite alternate;
+        }
+
+        .cancel {
+            width: 220rpx;
+            height: 85rpx;
+            background-image: url("https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/gift/wl-cancel.png");
+            background-size: 100%;
+        }
+
+        .confirm {
+            width: 220rpx;
+            height: 85rpx;
+            // background-image:url("https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/gift/wl-confirm.png");
+            background-size: 100%;
+        }
+    }
+
+}
+
+.type14 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    /* 子元素横向排列 */
+    justify-content: center;
+    /* 相对父元素水平居中 */
+    align-items: center;
+
+    /*  子元素相对父元素垂直居中 */
+    .content {
+        width: 600rpx;
+        height: 812rpx;
+        // position: relative;
+        // margin-top: 100rpx;
+        // .bg{
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     width: 737rpx;
+        //     height: 643rpx;
+        //     background:url('https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/images413/bg419.webp') no-repeat;
+        //     background-size: 737rpx 643rpx;
+        // }
+        position: relative;
+
+        .gift {
+            position: absolute;
+            top: 2rem;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 600rpx;
+            height: 812rpx;
+            // background:url('https://ctopmweb-cdn.iyoudui.com/mouthGiftMiniapp/images/images413/gift419.webp') no-repeat;
+            // background-size: 504rpx 659rpx;
+            background-size: 100%;
+            // animation: animation1 0.5s linear infinite;
+        }
+
+        .close {
+            top: 0.2rem !important;
+            right: 0rem !important;
+        }
+
+        @keyframes animation1 {
+            0% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1) rotate(-10deg);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            75% {
+                transform: scale(1) rotate(10deg);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes animation2 {
+            0% {
+                transform: scale(0.6);
+                top: 535rpx;
+                left: 239rpx;
+
+            }
+
+            50% {
+                transform: scale(1);
+                top: 610rpx;
+                left: 289rpx;
+            }
+
+            100% {
+                transform: scale(0.6);
+                top: 535rpx;
+                left: 239rpx;
+            }
+        }
+
+    }
+}
+
+.type15 {
+    .content {
+        width: 600rpx;
+        height: 542rpx;
+        background:url('@{baseUrl}share-dialog.webp') no-repeat center;
+        background-size: 100% 100%;
+        text-align: center;
+        position: relative;
+
+        .title {
+            font-size: 42rpx;
+            color: #EE402F;
+            padding-top: 145rpx;
+            font-weight: bold;
+        }
+
+        .userList {
+            margin-top: 36rpx;
+
+            view {
+                width: 130rpx;
+                height: 130rpx;
+                background: #FFFFFF;
+                border-radius: 40rpx;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+
+            .no-user {
+                border: 2rpx solid #E5C0B5;
+                position: relative;
+                color: #EAD1CA;
+                font-size: 80rpx;
+                font-weight: 300;
+                line-height: 112rpx;
+            }
+
+            .user {
+                image {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        .btn {
+            width: 367rpx;
+            height: 100rpx;
+            border-radius: 50rpx;
+            margin: 40rpx auto 0;
+            color: #fff;
+            font-size: 48rpx;
+            line-height: 100rpx;
+            background: linear-gradient(90deg, #EA402C 0%, #EE823D 100%);
+
+            &.color {
+                background: linear-gradient(90deg, #EA402C 0%, #EE823D 100%);
+            }
+
+            &.gray {
+                background: #ABABAB;
+            }
+        }
+    }
+}
+
+@keyframes btn-scale {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.3);
+    }
+}
+
+@keyframes to-show {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}

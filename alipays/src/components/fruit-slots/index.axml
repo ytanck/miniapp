@@ -1,0 +1,15 @@
+<view class="fruit-slots ">
+  <view class="title">今日还剩{{isDrawVO.remainingCount||0}}次抽奖机会</view>
+  <view class="lt-item-list">
+    <block a:for="{{prizeBox}}">
+      <view key="{{index}}" class="lt-item {{index === activeIndex ? 'lt-active' : ''}}">
+        <image src="{{item.icon}}" mode="widthFix" style="width:100%;height:100%;" />
+      </view>
+      <!-- <view key="btn" a:if="{{index==3}}" class="lt-item lt-button {{disabled ? 'disabled' : (isRolling ? 'pause' : '')}}" 
+        onTap="startClick" /> -->
+      <view key="btn" a:if="{{index==3}}" class="lt-item {{disabled ? 'disabled' : (isRolling ? 'pause' : '')}}"
+      style="background:url('{{drawBtnImg}}') no-repeat center / cover"
+        onTap="startClick" />
+    </block>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+    "component":true,
+    "usingComponents":{
+        "index-banner-module": "/components/index-banner-module/index-banner-module",
+        "ad-banner-module":"/components/ad-banner-module/ad-banner-module"
+    }
+}

@@ -1,0 +1,174 @@
+<view class="prize">
+  <!-- 顶部轮播 -->
+  <xh-banner
+    a:if="{{xhBanner.length}}"
+    env="{{env}}"
+    channel="{{channel}}"
+    width="690"
+    height="170"
+    bannerList="{{xhBanner}}"
+    appId="{{appId}}"
+    uid="{{uid}}"
+    onBannerVisitProps="onBannerVisitProps"
+    onBannerClickProps="onBannerClickProps"
+  ></xh-banner>
+  <!-- <ad-banner a:if="{{xhBanner.length}}" bannerList="{{xhBanner}}" /> -->
+  <view class="prize-item" a:if="{{prizeList.length}}" a:for="{{prizeList}}">
+    <view class="prize-image">
+      <image src="{{item.prizeImageUrl}}"></image>
+    </view>
+    <view class="prize-name">{{ item.prizeName }}</view>
+    <view class="prize-desc"> {{ item.prizeDesc }} </view>
+    <view class="prize-time">
+      抽奖时间:{{ item.gmtCreate.replace("年", "/").replace("月",
+      "/").replace("日", "") }}
+    </view>
+    <view
+      class="prizeNoBtn"
+      a:if="
+        {{(item.prizeType === 'IN_KIND' ||item.prizeType === 'YANHAO_VIDEO_VIP') &&
+        item.remark}}
+      "
+      data-item="{{item}}"
+      onTap="showUserInfo"
+    >
+      已领取
+    </view>
+    <!-- 实物/话费红包奖品且没有填写信息 -->
+    <view
+      class="prize-btn"
+      a:elif="
+        {{(item.prizeType === 'IN_KIND' ||item.prizeType === 'YANHAO_VIDEO_VIP') &&
+        !item.remark}}
+      "
+      data-item="{{item}}"
+      onTap="toUse"
+    >
+      去领取
+    </view>
+    <view class="prize-btn" a:else data-item="{{item}}" onTap="toUse">
+      去使用
+    </view>
+    <view class="prize-copy">
+      <view class="prize-id tag-read" id="foo">订单编号：{{ item.id }}</view>
+    </view>
+  </view>
+  <view class="nolist" a:if="{{!prizeList.length}}">空空如也~</view>
+
+  <view class="april-modal-mask" a:if="{{modelShow}}">
+    <!-- 话费券 -->
+    <view
+      class="sign-goods2"
+      a:if="{{curPrize.prizeType === 'PHONE_RED_PACKET'}}"
+    >
+      <!--  -->
+      <view class="close" onTap="onClose"></view>
+      <view class="sign-goods2-image"></view>
+      <view class="sign-goods2-name">{{ curPrize.prizeName }}</view>
+      <view class="sign-goods2-desc">{{ curPrize.prizeDesc }}</view>
+      <input
+        data-type="phone"
+        maxlength="11"
+        onInput="bindKeyInput"
+        value="{{prizeAddressInfo.phoneValue}}"
+        placeholder="请填写收货人手机号"
+        class="sign-goods2-input"
+        disabled="{{disabled}}"
+      />
+      <view class="sign-goods2-warning">五个工作日内充值到相关手机号</view>
+      <view
+        class="{{ disabled ?  'sign-goods2-btn-nomal' : 'sign-goods2-btn'}}"
+        data-item="{{curPrize}}"
+        onTap="submitHandle"
+      ></view>
+    </view>
+    <!-- 视频会员领取 -->
+    <view class="sign-goods4" a:if="{{curPrize.prizeType=='YANHAO_VIDEO_VIP'}}">
+      <view class="close" onTap="onClose"></view>
+      <!-- <view class="sign-goods4-title"></view> -->
+      <view class="content">
+        <text>{{disabled?'':'请在以下奖品中选择一种想要的奖品'}}</text>
+        <view class="item" a:for="{{videoPrize}}">
+          <view class="item-prize-img">
+            <image src="{{item.configExt}}" />
+          </view>
+          <view class="item-desc">
+            <view>{{item.configName.split('-')[0]}}</view>
+            <view> {{item.configName.split('-')[1]}}</view>
+          </view>
+          <view
+            class="choose-btn {{index === chooseIndex ? 'choose-active' : ''}}"
+            data-index="{{index}}"
+            data-item="{{item}}"
+            onTap="chooseHandle"
+          >
+          </view>
+        </view>
+        <input
+          type="text"
+          maxlength="11"
+          data-type="phone"
+          value="{{prizeAddressInfo.phoneValue}}"
+          onInput="bindKeyInput"
+          placeholder="请填写收货人手机号"
+          class="sign-goods4-input"
+          disabled="{{disabled}}"
+        />
+        <view class="btn" a:if="{{!disabled}}" onTap="submitHandle"></view>
+        <view class="nobtn"></view>
+        <text class="desc">
+          奖品将在3个工作日内充值到您填写的手机号中\n请务必在活动结束前填写手机号\n若超过活动周期则无法发放奖品
+        </text>
+      </view>
+    </view>
+
+    <!-- 实物领取 -->
+    <view class="sign-goods5" a:else>
+      <view class="close" onTap="onClose"></view>
+      <view class="sign-goods5-log"></view>
+      <view class="sign-goods5-title"></view>
+      <input
+        type="text"
+        data-type="name"
+        maxlength="15"
+        onInput="bindKeyInput"
+        placeholder-class="placeholder"
+        value="{{prizeAddressInfo.nameVlaue}}"
+        placeholder="请填写收货人姓名"
+        class="sign-goods5-input1"
+        disabled="{{disabled}}"
+      />
+
+      <input
+        type="text"
+        data-type="phone"
+        value="{{prizeAddressInfo.phoneValue}}"
+        maxlength="11"
+        onInput="bindKeyInput"
+        placeholder="请填写收货人手机号"
+        class="sign-goods5-input2"
+        disabled="{{disabled}}"
+      />
+      <input
+        type="text"
+        value="{{prizeAddressInfo.addressValue}}"
+        data-type="address"
+        onInput="bindKeyInput"
+        placeholder-class="placeholder"
+        placeholder="请填写收货人地址"
+        class="sign-goods5-input3"
+        disabled="{{disabled}}"
+      />
+      <view class="sign-goods5-receive" a:if="{{curPrize.remark}}"></view>
+      <view class="sign-goods5-btn" onTap="submitHandle" a:else></view>
+    </view>
+    <!-- 关闭按钮 -->
+    <!-- <view class="april-modal-close">
+      <image
+        src="https://xiaojinhe-cdn.iyoudui.com/activity/julyActivity/btn-close.png"
+        data-type="close"
+        onTap="onClose"
+      />
+    </view> -->
+  </view>
+</view>
