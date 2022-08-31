@@ -14,7 +14,7 @@ gulp.task("wxml", (done) => {
   gulp.src("./src/**/*.wxml").pipe(gulp.dest(config.dist));
   done();
 });
-//输出wxml
+//输出html
 gulp.task("html", (done) => {
   gulp
     .src("./src/**/*.html")

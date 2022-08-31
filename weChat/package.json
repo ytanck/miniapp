@@ -7,7 +7,7 @@
     "gulp-less": "^4.0.1",
     "gulp-rename": "^1.4.0"
   },
-  "name": "dv-member",
+  "name": "wx-miniapp",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
